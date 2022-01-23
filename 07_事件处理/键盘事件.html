@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.Vue中常用的按键别名： enter delete esc space tab up downleft right -->
+    <!-- 2.Vue不识别的按键，可以使用原始key值绑定，注意kebab-case  -->
+    <!-- 3.系统修饰键语法特殊： -->
+    <!-- （1）.配合keyup使用时，按住修饰键再按其他键才会触发 （2）keydown时，正常触发 -->
+    <!-- 可以直接使用keyCode触发 -->
+    <!-- Vue.config.keyCodes.zidingyi = jianma 定制按键别名，不推荐-->
+    <div id="root">
+        <h2>hi,{{name}}</h2>
+        <input type="text" placeholder="press Enter to show input" @keyup.enter='showInfo'>
+    </div>
+    <script>
+        Vue.config.productionTip = false // 关闭生产环境提示
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'frank'
+            },
+            methods: {
+                showInfo(e) {
+                    console.log(e.target)
+                    console.log(e.target.value)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

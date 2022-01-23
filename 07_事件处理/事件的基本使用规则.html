@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <h1>Hello,frank</h1>
+        <button v-on:click='showInfo'> click me to show info</button>
+        <button v-on:click='showInfo2(66, $event)'> click me to show info</button>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false // 关闭生产环境提示
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'frank'
+            },
+            methods: {
+                showInfo(event) {
+                    //console.log(event.target.innerText)
+                    //console.log(this) //此处this为vm 如果写成箭头函数，this变为window 因此 受vue管理的函数都写成一般函数
+                    alert("13")
+                },
+                showInfo2(number, a) {
+                    //console.log(event.target.innerText)
+                    //console.log(this) //此处this为vm 如果写成箭头函数，this变为window 因此 受vue管理的函数都写成一般函数
+                    alert(number, a)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
