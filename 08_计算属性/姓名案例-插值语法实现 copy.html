@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root">
+        first name: <input type="text" v-model='firstName'> <br>
+        last name: <input type="text" v-model="lastName"> <br>
+        name: <span>{{firstName}}-{{lastName}}</span>
+    </div>
+    <script>
+        Vue.config.productionTip = false // 关闭生产环境提示
+        new Vue({
+            el: '#root',
+            data: {
+                firstName: 'frank',
+                lastName:'123'
+            }
+        })
+    </script>
+</body>
+
+</html>
